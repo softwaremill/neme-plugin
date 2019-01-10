@@ -1,0 +1,4 @@
+<plugin>
+  <name>neme</name>
+  <classname>com.softwaremill.neme.NemePlugin</classname>
+</plugin>

@@ -2,7 +2,6 @@ name := "neme"
 
 val commonSettings = commonSmlBuildSettings ++ ossPublishSettings ++ Seq(
   organization := "com.softwaremill.neme",
-  version := "0.0.1",
   scalaVersion := "2.12.8",
   crossScalaVersions := Seq("2.11.12", scalaVersion.value),
 )

@@ -9,7 +9,7 @@ class NemePlugin(val global: Global) extends Plugin {
   import global._
 
   val name = "neme"
-  val description = "Scala compiler plugin for warning suppression"
+  val description = "Scala compiler plugin for turning non exhaustive match warnings into errors"
   val components: List[PluginComponent] = List(component)
 
   private lazy val reporter =
@@ -26,12 +26,7 @@ class NemePlugin(val global: Global) extends Plugin {
     val phaseName = "neme"
 
     def newPhase(prev: Phase): StdPhase = new StdPhase(prev) {
-      def apply(unit: CompilationUnit): Unit = applySuppressions(unit)
-    }
-
-    def applySuppressions(unit: CompilationUnit): Unit = {
-      plugin.reporter.exec()
+      def apply(unit: CompilationUnit): Unit = plugin.reporter.exec()
     }
   }
-
 }

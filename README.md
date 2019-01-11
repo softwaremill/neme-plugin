@@ -10,6 +10,6 @@ If you're using SBT, simply add these lines to your `build.sbt` to enable the pl
 
 ```scala
 libraryDependencies ++= Seq(
-  compilerPlugin("com.softwaremill" %% "neme-plugin" % nemeVersion)
+  compilerPlugin("com.softwaremill" %% "neme-plugin" % "0.0.1")
 )
 ```

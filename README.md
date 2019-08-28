@@ -13,3 +13,9 @@ libraryDependencies ++= Seq(
   compilerPlugin("com.softwaremill.neme" %% "neme-plugin" % "0.0.2")
 )
 ```
+
+Or in `~/.sbt/1.0/*.sbt`:
+
+```scala
+addCompilerPlugin("com.softwaremill.neme" %% "neme-plugin" % "0.0.2")
+```

@@ -1,10 +1,14 @@
 import com.softwaremill.PublishTravis.publishTravisSettings
 
+val v2_11 = "2.11.12"
+val v2_12 = "2.12.9"
+val v2_13 = "2.13.0"
+
 val commonSettings = commonSmlBuildSettings ++ ossPublishSettings ++ Seq(
   organization := "com.softwaremill.neme",
   scalafmtOnCompile := true,
-  scalaVersion := "2.12.9",
-  crossScalaVersions := Seq("2.13.0", scalaVersion.value),
+  scalaVersion := v2_12,
+  crossScalaVersions := Seq(v2_13, v2_12, v2_11),
 )
 
 lazy val neme = (project in file("."))

@@ -1,4 +1,5 @@
 ## neme - not exhaustive match error
+[![Build Status](https://travis-ci.org/softwaremill/neme-plugin.svg?branch=master)](https://travis-ci.org/softwaremill/neme-plugin)
 
 Scala compiler plugin for turning non exhaustive match warnings into errors
 

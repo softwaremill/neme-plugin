@@ -5,6 +5,8 @@ Scala compiler plugin for turning non exhaustive match warnings into errors
 
 This plugin is heavily inspired by [silencer-plugin](https://github.com/ghik/silencer)
 
+Published for Scala 2.11, 2.12 and 2.13.
+
 ### Usage
 
 If you're using SBT, simply add these lines to your `build.sbt` to enable the plugin:

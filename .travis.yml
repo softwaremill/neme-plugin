@@ -2,6 +2,7 @@ language: scala
 scala:
   - 2.13.0
   - 2.12.9
+  - 2.11.12
 before_install:
   - bash scripts/decrypt_files_if_not_pr.sh
 before_cache:

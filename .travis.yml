@@ -1,21 +1,23 @@
 language: scala
-
 scala:
   - 2.13.0
   - 2.12.9
-
-jdk:
-  - openjdk8  
-
-cache:
-  directories:
-    - $HOME/.ivy2/cache
-    - $HOME/.coursier/cache
-    - $HOME/.sbt/boot/
-
+before_install:
+  - bash scripts/decrypt_files_if_not_pr.sh
 before_cache:
   - find $HOME/.ivy2 -name "ivydata-*.properties" -delete
   - find $HOME/.sbt -name "*.lock" -delete
-
+cache:
+  directories:
+  - "$HOME/.ivy2/cache"
+  - "$HOME/.coursier/cache"
+  - "$HOME/.sbt/boot/"
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION clean test
+  - sbt ++$TRAVIS_SCALA_VERSION test
+deploy:
+  - provider: script
+    script: sbt publishRelease
+    skip_cleanup: true
+    on:
+      all_branches: true
+      condition: $TRAVIS_SCALA_VERSION = "2.12.9" && $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+(\.[0-9]+)?

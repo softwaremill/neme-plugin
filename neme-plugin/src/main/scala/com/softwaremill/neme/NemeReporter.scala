@@ -34,9 +34,9 @@ class NemeReporter(original: Reporter) extends Reporter {
   }
 
   private def originalSeverity(severity: Severity) = severity match {
-    case INFO => original.INFO
+    case INFO    => original.INFO
     case WARNING => original.WARNING
-    case ERROR => original.ERROR
+    case ERROR   => original.ERROR
   }
 
   override def hasErrors: Boolean =

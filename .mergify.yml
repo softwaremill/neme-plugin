@@ -21,6 +21,15 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+  - name: automatic merge for scala-steward pull requests affecting project scalafmt.conf
+    conditions:
+      - author=scala-steward
+      - status-success=continuous-integration/travis-ci/pr
+      - "#files=1"
+      - files=.scalafmt.conf
+    actions:
+      merge:
+        method: merge
   - name: semi-automatic merge for scala-steward pull requests
     conditions:
       - author=scala-steward

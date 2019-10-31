@@ -2,13 +2,13 @@ import com.softwaremill.PublishTravis.publishTravisSettings
 
 val v2_11 = "2.11.12"
 val v2_12 = "2.12.9"
-val v2_13 = "2.13.0"
+val v2_13 = "2.13.1"
 
 val commonSettings = commonSmlBuildSettings ++ ossPublishSettings ++ Seq(
   organization := "com.softwaremill.neme",
   scalafmtOnCompile := true,
   scalaVersion := v2_12,
-  crossScalaVersions := Seq(v2_13, v2_12, v2_11),
+  crossScalaVersions := Seq(v2_13, v2_12, v2_11)
 )
 
 lazy val neme = (project in file("."))
@@ -27,4 +27,12 @@ lazy val `neme-plugin` = project
     ),
     fork in Test := true,
     baseDirectory in Test := (baseDirectory in ThisBuild).value,
+    unmanagedSourceDirectories in Compile += {
+      // sourceDirectory returns a platform-scoped directory, e.g. /.jvm
+      val sourceDir = (baseDirectory in Compile).value / "src" / "main"
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((2, n)) if n >= 13 => sourceDir / "scala-2.13+"
+        case _                       => sourceDir / "scala-2.13-"
+      }
+    }
   )

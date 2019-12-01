@@ -4,7 +4,6 @@ import scala.reflect.internal.util.Position
 import scala.tools.nsc.reporters.Reporter
 
 class NemeReporter(original: Reporter) extends Reporter {
-
   def exec(): Unit = {
     updateCounts()
   }

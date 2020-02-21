@@ -1,14 +1,14 @@
 package com.softwaremill.neme
 
-import org.scalatest.FunSuite
 
 import scala.io.Source
 import scala.reflect.io.VirtualDirectory
 import scala.tools.nsc.plugins.Plugin
 import scala.tools.nsc.reporters.ConsoleReporter
 import scala.tools.nsc.{Global, Settings}
+import org.scalatest.funsuite.AnyFunSuite
 
-class NemePluginTest extends FunSuite {
+class NemePluginTest extends AnyFunSuite {
   suite =>
 
   val testdata = "neme-plugin/testdata/"

@@ -8,6 +8,12 @@ This plugin is heavily inspired by [silencer-plugin](https://github.com/ghik/sil
 
 Published for Scala 2.11, 2.12 and 2.13.
 
+### Deprecation notice
+
+Since scala 2.13.2 there is a new flag - `-Wconf` which covers that functionality making this project obsolote.
+
+See https://github.com/scala/scala/pull/8373
+
 ### Usage
 
 If you're using SBT, simply add these lines to your `build.sbt` to enable the plugin:

@@ -25,8 +25,9 @@ class NemePlugin(val global: Global) extends Plugin {
     override val runsBefore = List("patmat")
     val phaseName = "neme"
 
-    def newPhase(prev: Phase): StdPhase = new StdPhase(prev) {
-      def apply(unit: CompilationUnit): Unit = plugin.reporter.exec()
-    }
+    def newPhase(prev: Phase): StdPhase =
+      new StdPhase(prev) {
+        def apply(unit: CompilationUnit): Unit = plugin.reporter.exec()
+      }
   }
 }

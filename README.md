@@ -12,7 +12,11 @@ Published for Scala 2.11, 2.12 and 2.13.
 
 Since scala 2.13.2 there is a new flag - `-Wconf` which covers that functionality making this project obsolote.
 
-See https://github.com/scala/scala/pull/8373
+See https://github.com/scala/scala/pull/8373. The specific setting replicating the functionality of the plugin is:
+
+```
+scalacOptions += "-Wconf:cat=other-match-analysis:error"
+```
 
 ### Usage
 

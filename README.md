@@ -10,7 +10,8 @@ Published for Scala 2.11, 2.12 and 2.13.
 
 ### Deprecation notice
 
-Since scala 2.13.2 there is a new flag - `-Wconf` which covers that functionality making this project obsolote.
+Since scala 2.13.2 there is a new flag - `-Wconf` which covers that functionality making this project obsolete.
+Later, it was also backported into 2.12.13 (https://github.com/scala/scala/releases/tag/v2.12.13).
 
 See https://github.com/scala/scala/pull/8373. The specific setting replicating the functionality of the plugin is:
 

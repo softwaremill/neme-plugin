@@ -23,7 +23,7 @@ lazy val `neme-plugin` = project
     name := "neme-plugin",
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-compiler" % scalaVersion.value,
-      "org.scalatest" %% "scalatest" % "3.0.9" % Test
+      "org.scalatest" %% "scalatest" % "3.2.13" % Test
     ),
     fork in Test := true,
     baseDirectory in Test := (baseDirectory in ThisBuild).value,
